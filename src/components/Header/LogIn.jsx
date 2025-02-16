@@ -1,4 +1,4 @@
-export default function LogIn() {
+export default function LogIn({ openLogin }) {
   function handleClick() {
     console.log("pedal");
   }
@@ -6,7 +6,7 @@ export default function LogIn() {
   return (
     <div className="flex items-center">
       <button
-        onClick={handleClick}
+        onClick={() => openLogin()}
         className="bg-indigo-600 w-25 h-12 rounded-2xl text-white hover:cursor-pointer"
       >
         SIGN IN
