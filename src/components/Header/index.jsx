@@ -1,5 +1,16 @@
-import React from 'react'
+import React from "react";
+import HeaderLogo from "./HeaderLogo.jsx";
+import LogIn from "./LogIn.jsx";
+import Categories from "./Categories.jsx";
 
 export const Header = () => {
-    return <div className="text-3xl font-bold underline">Header</div>
-}
+  return (
+    <>
+      <div className="flex">
+        <HeaderLogo />
+        <LogIn />
+      </div>
+      <Categories />
+    </>
+  );
+};
