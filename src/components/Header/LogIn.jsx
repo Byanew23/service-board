@@ -1,13 +1,15 @@
+import useScrollVisibility from "./useScrollVisibility";
+
 export default function LogIn({ openLogin }) {
-  function handleClick() {
-    console.log("pedal");
-  }
+  const isVisible = useScrollVisibility(300);
 
   return (
-    <div className="flex items-center">
+    <div className={`flex items-center ${!isVisible ? "pr-3" : ""}`}>
       <button
         onClick={() => openLogin()}
-        className="bg-indigo-600 w-25 h-12 rounded-2xl text-white hover:cursor-pointer"
+        className={`bg-indigo-600 w-25 ${
+          isVisible ? "h-12" : "h-10"
+        } rounded-2xl text-white hover:cursor-pointer`}
       >
         SIGN IN
       </button>
