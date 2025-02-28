@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import HeaderLogo from "./HeaderLogo.jsx";
+import LogInButton from "./LogInButton.jsx";
 import LogIn from "./LogIn.jsx";
 import Categories from "./Categories.jsx";
 import { Modal } from "../Modal/index.jsx";
@@ -19,22 +20,12 @@ export const Header = () => {
       >
         <div className="flex">
           <HeaderLogo />
-          <LogIn openLogin={() => setOpenModal(true)} />
+          <LogInButton openLogin={() => setOpenModal(true)} />
         </div>
         <Categories />
       </div>
       <Modal open={openModal} handleClose={() => setOpenModal(false)}>
-        <div className="flex flex-col">
-          <h2 className="self-center mb-5">Give me your info</h2>
-          <input type="text" id="username" placeholder="Username" required />
-          <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            required
-          />
-          <button onclick="login()">Login</button>
-        </div>
+        <LogIn />
       </Modal>
     </>
   );
